@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<title>To-Let Tracker</title>
+<head>
+    <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style></head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+<div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:340px;">
+  <a href="file:///G:/Study/Spring%202020/CSE327/SRS/SRS.html#" class="w3-bar-item w3-button">Cover</a>
+  <a href="file:///G:/Study/Spring%202020/CSE327/SRS/SRS.html#" class="w3-bar-item w3-button">Revisions</a>
+  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc()">
+  1. Introduction <i class="fa fa-caret-down"></i>
+  </button>
+
+  <div class="w3-dropdown-click">
+    <button class="w3-button" onclick="myDropFunc()">
+      2. Document Conventions <i class="fa fa-caret-down"></i>
+    </button>
+    <div id="demoDrop" class="w3-dropdown-content w3-bar-block w3-white w3-card">
+      <a href="#" class="w3-bar-item w3-button">2.1 PRODUCT OVERVIEW</a>
+      <a href="#" class="w3-bar-item w3-button">2.2 PRODUCT FUNCTIONALITY</a>
+      <a href="#" class="w3-bar-item w3-button">2.3 DESIGN AND IMPLEMENTATION CONSTRAINS</a>
+      <a href="#" class="w3-bar-item w3-button">2.4 ASSUMPTIONS AND DEPENDENCIES</a>
+    </div>
+  </div>
+
+  <div class="w3-dropdown-click">
+    <button class="w3-button" onclick="myDropFunc2()">
+      3. Description of Design Components <i class="fa fa-caret-down"></i>
+    </button>
+    <div id="demoDrop2" class="w3-dropdown-content w3-bar-block w3-white w3-card">
+      <a href="#" class="w3-bar-item w3-button">3.1 EXTERNAL INTERFACE REQUIREMENTS</a>
+      <a href="#" class="w3-bar-item w3-button">3.2 FUNCTIONAL REQUIREMENTS</a>
+      <a href="#" class="w3-bar-item w3-button">3.3 USE CASE MODEL</a>
+    </div>
+  </div>
+
+  <div class="w3-dropdown-click">
+    <button class="w3-button" onclick="myDropFunc3()">
+      4. High-Level Component Design <i class="fa fa-caret-down"></i>
+    </button>
+    <div id="demoDrop3" class="w3-dropdown-content w3-bar-block w3-white w3-card">
+      <a href="#" class="w3-bar-item w3-button">4.1 PERFORMANCE REQUIREMENTS</a>
+      <a href="#" class="w3-bar-item w3-button">4.2 SAFETY AND SECURITY REQUIREMENTS</a>
+      <a href="#" class="w3-bar-item w3-button">4.3 SOFTWARE QUALITY ATTRIBUTES</a>
+    </div>
+  </div>
+
+  <button class="w3-button" onclick="myDropFunc3()">
+    5. Class Diagram <i class="fa fa-caret-down"></i>
+  </button>
+
+  <button class="w3-button" onclick="myDropFunc3()">
+    6. Database Design <i class="fa fa-caret-down"></i>
+  </button>
+
+  <button class="w3-button" onclick="myDropFunc3()">
+    7. Implementation Plan <i class="fa fa-caret-down"></i>
+  </button>
+
+  <a href="file:///G:/Study/Spring%202020/CSE327/SRS/SRS.html#" class="w3-bar-item w3-button">5. Other Requirements</a>
+  <a href="file:///G:/Study/Spring%202020/CSE327/SRS/SRS.html#" class="w3-bar-item w3-button">APPENDIX A – DATA DICTIONARY</a>
+  <a href="file:///G:/Study/Spring%202020/CSE327/SRS/SRS.html#" class="w3-bar-item w3-button">APPENDIX B – GROUP LOG</a>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jsPDF/dist/jspdf.min.js"></script>
+
+  <script>
+  function HTMLtoPDF(){
+    var doc = new HTMLtoPDF();
+
+    doc.text(20, 20, 'Hello World!');
+    doc.text(20, 30, 'This is client-side Javascript to generate a PDF');
+
+    doc.save('SRS.pdf');
+  }
+
+  </script>
+
+  <button style="margin-top: 40px; margin-left: 100px;" onclick="HTMLtoPDF()">Download Pdf</button> 
+</div>
+
+<div class="w3-container" style="margin-left:340px">
+<h2><b>Software Development Specification</b></h2>
+<h3>For</h3>
+<h2><b>To-Let Tracker</b></h2>
+<h4>Version 1.0</h4>
+<h4><b>Prepared By:</b></h4>
+<table>
+    <tr>
+      <th>Name</th>
+      <th>Id</th>
+      <th>Email</th>
+    </tr>
+    <tr>
+      <td>Fuad Hasan</td>
+      <td>1711042642</td>
+      <td>fuad.hasan.1997@gmail.com</td>
+    </tr>
+    <tr>
+      <td>Abdullah Al Rafi</td>
+      <td>1731371642</td>
+      <td>abdullah34alrafi@gmail.com</td>
+    </tr>
+  </table>
+
+  <h4><b>Instructor: Dr. Nabeel Mohammed</b></h4>
+  <h4><b>Course : Software Engineering</b></h4>
+  <h4><b>Section : 03</b></h4>
+  <h4><b>Date : TBA</b></h4>
+</div>
+
+<script>
+function myAccFunc() {
+  var x = document.getElementById("demoAcc");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+
+function myDropFunc() {
+  var x = document.getElementById("demoDrop");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+
+function myDropFunc2() {
+  var x = document.getElementById("demoDrop2");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+
+function myDropFunc3() {
+  var x = document.getElementById("demoDrop3");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+</script></script>>
+<br>
+<br>
+<div class="w3-container" style="margin-left:340px">
+  <h2 style="text-align: center;"><b><u>Introduction</u></b></h2>
+  <p>This section describes the topview of <b>To-Let Tracker</b> which includes both the fuctional and non-fuctional requirements in this SRS document. It has all the explanations so that it could be readable to a vast range of people.</p>
+
+  <p>[1] IEEE Software Engineering Standards Committee, “IEEE Std 830-1998, IEEE Recommended Practice for Software Requirements Specifications”, October 20, 1998</p>
+</div>
+
+<div class="w3-container" style="margin-left:340px">
+  <h2 style="text-align: center;"><b><u>Document Conventions</u></b></h2>
+  <p>This section's purpose is to give overview of the overall system. The system will be explained and show how it is going to interact with other systems. Some of the basic fucntionalities will be described too. At last, the assumptions and dependencies will be described.</p>
+  
+</div>
+
+<div class="w3-container" style="margin-left:340px">
+  <h2 style="text-align: center;"><b><u>Description of Design Components</u></b></h2>
+  
+</div>
+
+<div class="w3-container" style="margin-left:340px">
+  <h2 style="text-align: center;"><b><u>High-level Component Design</u></b></h2>
+
+  </div>
+
+  <div class="w3-container" style="margin-left:340px">
+    <h2 style="text-align: center;"><b><u>Class Diagram</u></b></h2>
+    <p>Your Writings will be here!</p>
+  </div>
+
+  <div class="w3-container" style="margin-left:340px">
+    <h2 style="text-align: center;"><b><u>Database Design</u></b></h2>
+    <p>Your Writings will be here!</p>
+  </div>
+
+  <div class="w3-container" style="margin-left:340px">
+    <h2 style="text-align: center;"><b><u>Implementation Plan</u></b></h2>
+    <p>Your Writings will be here!</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+// The Add Listing View
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}"/>
+    <title>Add Listings</title>
+</head>
+<style>
+  button{
+    position:relative;
+    top:50%; 
+    left:40%;
+    border-radius: 5px;
+    padding: 8px 24px;
+    border: 2px solid #74cfbf;
+    background-color: white;
+    transition-duration: 0.3s;
+  }
+    button:hover{
+        background-color: #74cfbf;
+        border: 2px solid white;
+        color: white;
+    }
+</style>
+<body>
+    {% block bodyblock %}
+    <div class="jumbotron container" style="text-align: center;">
+        <h3>🏡 ToLet Tracker 🏚</h3>
+        <br><br>
+        <h4>❌❗ Broken - Needs More Time ❗❌</h4>
+        <br><br>
+        {% for message in messages %}
+		    <h4 id="messages">{{message}}</h4>
+		{% endfor %}
+    </div>
+    {% endblock %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3 ">
+		     <div class="list-group ">
+                {% if user.is_authenticated %}
+                <a href="{% url 'tolet:home' %}" class="list-group-item list-group-item-action">Dashboard</a>
+                <a href="{% url 'tolet:profile' %}" class="list-group-item list-group-item-action">Profile</a>
+                <a href="{% url 'tolet:listings' %}" class="list-group-item list-group-item-action">Listings</a>
+                <div class="col-md-12">
+                    <a href="{% url 'tolet:listings_form' %}" class="list-group-item list-group-item-action active">Add Listings</a>
+                    <a href="{% url 'tolet:listings_list' %}" class="list-group-item list-group-item-action">Check Listings</a>
+                </div>
+                <a href="{% url 'tolet:settings' %}" class="list-group-item list-group-item-action">Settings</a>
+                {% endif %}
+              
+              
+            </div> 
+		</div>
+		<div class="col-md-9">
+		    <div class="card">
+		        <div class="card-body">
+		            <div class="row">
+		                <div class="col-md-12">                        
+		                    <form method="POST" action="{% url 'tolet:listings_form' %}">
+                                {% csrf_token %}
+                                <div class="form-group row">
+                                    <label for="phone_number" class="col-4 col-form-label">Phone Number:</label> 
+                                    <div class="col-8">
+                                        {{form.phone_number}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="location" class="col-4 col-form-label">Location:</label> 
+                                    <div class="col-8">
+                                        {{form.location}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="flat_description" class="col-4 col-form-label">Flat Description:</label> 
+                                    <div class="col-8">
+                                        {{form.flat_description}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="flat_size" class="col-4 col-form-label">Flat Size (sqft):</label> 
+                                    <div class="col-8">
+                                        {{form.flat_size}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="total_rent" class="col-4 col-form-label">Total Rent (BDT):</label> 
+                                    <div class="col-8">
+                                        {{form.total_rent}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="photos" class="col-4 col-form-label">Photo (if any):</label> 
+                                    <div class="col-8">
+                                        {{form.photos}}
+                                    </div>
+                                </div>
+                              <button type="submit">Change</button>                             
+                            </form>
+		                </div>
+		            </div>
+		            
+		        </div>
+		    </div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

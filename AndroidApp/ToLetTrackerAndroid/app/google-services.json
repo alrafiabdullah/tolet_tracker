@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "798714799298",
+    "firebase_url": "https://to-let-tracker.firebaseio.com",
+    "project_id": "to-let-tracker",
+    "storage_bucket": "to-let-tracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:798714799298:android:4a52aea1d2ee33fbdb475b",
+        "android_client_info": {
+          "package_name": "com.example.to_lettracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "798714799298-ccagp3avnume2v5d7rpkdo69r56v4b8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKGXy6Skx9xPzihkNWjemNDk7Pjo3m45k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "798714799298-ccagp3avnume2v5d7rpkdo69r56v4b8b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

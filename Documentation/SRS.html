@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<title>To-Let Tracker - Software Requirement Specification</title>
+<head>
+    <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style></head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+<div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:340px;">
+  <a href="file:///G:/Study/Spring%202020/CSE327/SRS/SRS.html#" class="w3-bar-item w3-button">Cover</a>
+  <a href="file:///G:/Study/Spring%202020/CSE327/SRS/SRS.html#" class="w3-bar-item w3-button">Revisions</a>
+  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc()">
+  1. Introduction <i class="fa fa-caret-down"></i>
+  </button>
+  <div id="demoAcc" class="w3-hide w3-white w3-card">
+    <a href="#" class="w3-bar-item w3-button">1.1 DOCUMENT PURPOSE</a>
+    <a href="#" class="w3-bar-item w3-button">1.2 PRODUCT SCOPE</a>
+    <a href="#" class="w3-bar-item w3-button">1.3 INTENDED AUDIENCE AND DOCUMENT OVERVIEW</a>
+    <a href="#" class="w3-bar-item w3-button">1.4 DEFINITIONS, ACRONYMS AND ABBREVIATIONS</a>
+    <a href="#" class="w3-bar-item w3-button">1.5 DOCUMENT CONVENTIONS</a>
+    <a href="#" class="w3-bar-item w3-button">1.6 REFERENCES AND ACKNOWLEDGMENTS</a>
+  </div>
+
+  <div class="w3-dropdown-click">
+    <button class="w3-button" onclick="myDropFunc()">
+      2. Overall Description <i class="fa fa-caret-down"></i>
+    </button>
+    <div id="demoDrop" class="w3-dropdown-content w3-bar-block w3-white w3-card">
+      <a href="#" class="w3-bar-item w3-button">2.1 PRODUCT OVERVIEW</a>
+      <a href="#" class="w3-bar-item w3-button">2.2 PRODUCT FUNCTIONALITY</a>
+      <a href="#" class="w3-bar-item w3-button">2.3 DESIGN AND IMPLEMENTATION CONSTRAINS</a>
+      <a href="#" class="w3-bar-item w3-button">2.4 ASSUMPTIONS AND DEPENDENCIES</a>
+    </div>
+  </div>
+
+  <div class="w3-dropdown-click">
+    <button class="w3-button" onclick="myDropFunc2()">
+      3. Specific Requirements <i class="fa fa-caret-down"></i>
+    </button>
+    <div id="demoDrop2" class="w3-dropdown-content w3-bar-block w3-white w3-card">
+      <a href="#" class="w3-bar-item w3-button">3.1 EXTERNAL INTERFACE REQUIREMENTS</a>
+      <a href="#" class="w3-bar-item w3-button">3.2 FUNCTIONAL REQUIREMENTS</a>
+      <a href="#" class="w3-bar-item w3-button">3.3 USE CASE MODEL</a>
+    </div>
+  </div>
+
+  <div class="w3-dropdown-click">
+    <button class="w3-button" onclick="myDropFunc3()">
+      4. Other Non-Functional Requirements <i class="fa fa-caret-down"></i>
+    </button>
+    <div id="demoDrop3" class="w3-dropdown-content w3-bar-block w3-white w3-card">
+      <a href="#" class="w3-bar-item w3-button">4.1 PERFORMANCE REQUIREMENTS</a>
+      <a href="#" class="w3-bar-item w3-button">4.2 SAFETY AND SECURITY REQUIREMENTS</a>
+      <a href="#" class="w3-bar-item w3-button">4.3 SOFTWARE QUALITY ATTRIBUTES</a>
+    </div>
+  </div>
+
+  <a href="file:///G:/Study/Spring%202020/CSE327/SRS/SRS.html#" class="w3-bar-item w3-button">5. Other Requirements</a>
+  <a href="file:///G:/Study/Spring%202020/CSE327/SRS/SRS.html#" class="w3-bar-item w3-button">APPENDIX A – DATA DICTIONARY</a>
+  <a href="file:///G:/Study/Spring%202020/CSE327/SRS/SRS.html#" class="w3-bar-item w3-button">APPENDIX B – GROUP LOG</a>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jsPDF/dist/jspdf.min.js"></script>
+
+  <script>
+  function HTMLtoPDF(){
+    var doc = new HTMLtoPDF();
+
+    doc.text(20, 20, 'Hello World!');
+    doc.text(20, 30, 'This is client-side Javascript to generate a PDF');
+
+    doc.save('SRS.pdf');
+  }
+
+  </script>
+
+  <button style="margin-top: 40px; margin-left: 100px;" onclick="HTMLtoPDF()">Download Pdf</button> 
+</div>
+
+<div class="w3-container" style="margin-left:340px">
+<h2><b>Software Requirement Specification</b></h2>
+<h3>For</h3>
+<h2><b>To-Let Tracker</b></h2>
+<h4>Version 1.0</h4>
+<h4><b>Prepared By:</b></h4>
+<table>
+    <tr>
+      <th>Name</th>
+      <th>Id</th>
+      <th>Email</th>
+    </tr>
+    <tr>
+      <td>Fuad Hasan</td>
+      <td>1711042642</td>
+      <td>fuad.hasan.1997@gmail.com</td>
+    </tr>
+    <tr>
+      <td>Abdullah Al Rafi</td>
+      <td>1731371642</td>
+      <td>abdullah34alrafi@gmail.com</td>
+    </tr>
+  </table>
+
+  <h4><b>Instructor: Dr. Nabeel Mohammed</b></h4>
+  <h4><b>Course : Software Engineering</b></h4>
+  <h4><b>Section : 03</b></h4>
+  <h4><b>Date : TBA</b></h4>
+</div>
+
+<script>
+function myAccFunc() {
+  var x = document.getElementById("demoAcc");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+
+function myDropFunc() {
+  var x = document.getElementById("demoDrop");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+
+function myDropFunc2() {
+  var x = document.getElementById("demoDrop2");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+
+function myDropFunc3() {
+  var x = document.getElementById("demoDrop3");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+</script></script>>
+<br>
+<br>
+<div class="w3-container" style="margin-left:340px">
+  <h2 style="text-align: center;"><b><u>Introduction</u></b></h2>
+  <p>This section describes the topview of <b>To-Let Tracker</b> which includes both the fuctional and non-fuctional requirements in this SRS document. It has all the explanations so that it could be readable to a vast range of people.</p>
+
+  <h3><b>1.1 Document Purpose</b></h3>
+  <p>The Software Requirement Specification's(SRS) purpose is to present the definitions and describe all the specification of our project <b>To-Let Tracker</b>. This documentation defines the system's primary uses and the most important functionalities so that the next developer who wants to extend it further can easily understand and recognized our work pattern and know where and how to change it if it is required.</p>
+
+  <h3><b>1.2 Product Scope</b></h3>
+  <p><b>To-Let Tracker</b> is an online platform where people will be able to find their desired flat/apartment to rent easily. What is so special about "<b>To-Let Tracker</b>" you ask? Here, with Augmented Reality users can see the which floors which side flat/apartment is ready for rent. Also, the users will be able to zoom in and out to correctly understand the location of the flat/apartment which will give them more satisfaction.<br>The owner will have to provide the exact information of his flat/apartment and upload it in our platform. Then the location of the property will be identified by Google Map and the Augmented Reality will show the exact flat/apartment as available via the phone camera. The camera will be able to detect floors. The user will be able to check the flat/apartment from different direction.<br>The Augmented Reality(AR) feature will be supported by an android app. Also, there will be a web app where both owner and user will be able to find their desired flats/apartments but there will not be any AR option.</p>
+
+  <h3><b>1.3 Intended Audience</b></h3>
+  <p>This SRS is intended for the software developers, designers and testers. It should be read chronologically the way it is written.</p>
+
+  <h3><b>1.5 Document Conventions</b></h3>
+  <p>Main Section Titles <br><br>Font: Times New Roman<br>Face: Bold<br>Size: 18<br><br>Sub Section Titles<br><br>Font: Times New Roman<br>Face: Bold<br>Size: 14<br><br>Other Texts<br><br>Font: Times New Roman<br>Face: Normal<br>Size: 12<br></p>
+
+  <h3><b>1.6 References And Acknowledgments</b></h3>
+  <p>[1] IEEE Software Engineering Standards Committee, “IEEE Std 830-1998, IEEE Recommended Practice for Software Requirements Specifications”, October 20, 1998</p>
+</div>
+
+<div class="w3-container" style="margin-left:340px">
+  <h2 style="text-align: center;"><b><u>Overall Description</u></b></h2>
+  <p>This section's purpose is to give overview of the overall system. The system will be explained and show how it is going to interact with other systems. Some of the basic fucntionalities will be described too. At last, the assumptions and dependencies will be described.</p>
+  
+  <h3><b>2.1 Product Overview</b></h3>
+  <p>There are two parts in this system: one android app and one web portal. The android application will be used by the users who want to rent flat/apartment and view the exact one in AR. The web portal is going to be used by both property owners and users. The owners will add the information of their properties and the users will be able to check them.<br> The mobile app needs Android 7.0 or above because the hardwares that will be used for AR can only be found from the Android version 7.0 and above. Also, the mobile phone's camera will be needed to implement the AR features.<br> The web application and mobile application will both have a database to store the flat/apartment's data and user data. The web portal will have the functionality of reading, writing and modifying access of the database where the mobile app will only have the access to read. The communication with database will happen through the same network for now.</p>
+  
+  <h3><b>2.2 Product Functionality</b></h3>
+  <p>The main fucntionality of the mobile app user will be the ability to visualise the exact flat/apartment through AR. The users will also be able to find flats/apartments based on the location they choose.<br>The web portal will consist of two parts: one for the administrator and the other one is for users. The users will be able to look for flats/apartments from here also. But it won't support AR feature. So, the web portal can be accessed from any device as it won't have any hardware related limitation.</p>
+
+  <h3><b>2.3 User Classes and Characteristics</b></h3>
+  <p>There are two user classes: owners/administrators and users.<br>The users will use the mobile app and the web app. All the features the mobile app can provide, they will be able to use it.<br>The administrator will take the information of the flat/apartment and list them on the web portal. The mobile application will not have any management features.</p>
+
+  <h3><b>2.4 Operating Environment</b></h3>
+  <p>Android:<br><br>Operating System: Android 7.0<br>Disk Space: 100 MB<br>RAM: 1 GB</p>
+  
+  <h3><b>2.5 Design And Implementation Constraints</b></h3>
+  <p>Since this is an online application, the first and foremost constraint will be the connectivity. In this case, the local network. It is cruicial for the application to fetch and show the data from our database.<br>The capacity of the database will be constrained for both mobile and web application. Also, the database is shared between both platforms. So, it may have to force to queue for requests. Therefore, it may take time more than usual to fetch the data.<br>The android version will need access of multiple sensors like camera, gyro, accelerometer etc. Moreover, it requires android version 7.0 and above to use AR feature.</p>
+  
+  <h3><b>2.6 Assumptions And Dependencies</b></h3>
+  <p>One assumption is the phones with good camera will provide better performance than others.<br>Another assumption is the moderately old released Android phone will meet the hardware requirements for the AR as the current version of Android is 10.<br>Also, a proper internet browser with stable internet connection is required for the web app.</p>
+</div>
+
+<div class="w3-container" style="margin-left:340px">
+  <h2 style="text-align: center;"><b><u>Specific Requirements</u></b></h2>
+  
+  <h3><b>3.1 External Interface Requirements</b></h3>
+  <p>Your Writings will be here!</p>
+  
+  <h3><b>3.2 Functional Requirements</b></h3>
+  <p>Your Writings will be here!</p>
+  
+  <h3><b>3.3 Use Case Model</b></h3>
+  <p>Your Writings will be here!</p>
+  <img src="G:\Study\Spring 2020\CSE327\SRS\spring2020.cse327.3.5\Blank Diagram.jpeg" height="720px", width="1140px">
+</div>
+
+<div class="w3-container" style="margin-left:340px">
+  <h2 style="text-align: center;"><b><u>Other Non-Functional Requirements</u></b></h2>
+  
+  <h3><b>4.1 Performance Requirements</b></h3>
+  <p>The software will work only in some specific area where the House Owner or Landlord is searching for renter. The app will show no result when the area have no vacant flat or house.</p>
+  
+  <h3><b>4.2 Safety And Security Requirements</b></h3>
+  <p>There will be a dedicated database for User's informations. The informations will be fetched from users through registration process. The password will be recorded using the Hashing function. So the password will be encripted and unaccessable to the naked eye.</p>
+  <p>The login terminal will use the unique username and password to login.</p>
+  
+  <h3><b>4.3 Software Quality Attributes</b></h3>
+  <p>The Quality Attributes are : </p>
+  <ul>
+    <li type="square">Correctness</li>
+    <li type="square">Reliability</li>
+    <li type="square">Adequacy</li>
+    <li type="square">Learnability</li>
+    <li type="square">Maintainability</li>
+    <li type="square">Readability</li>
+    <li type="square">Testability</li>
+    <li type="square">Efficiency</li>
+    <li type="square">Portability</li>
+
+  </ul>
+  
+<<<<<<< HEAD
+  <h3><b>4.4 Business Rules</b></h3>
+  <p>Your Writings will be here!</p>
+=======
+>>>>>>> 9a8deb1955c6099d0f791aeeee52b8c28e4409ab
+  </div>
+
+  <div class="w3-container" style="margin-left:340px">
+    <h2 style="text-align: center;"><b><u>Other Requirements</u></b></h2>
+    <p>Your Writings will be here!</p>
+  </div>
+
+  <div class="w3-container" style="margin-left:340px">
+    <h2 style="text-align: center;"><b><u>APPENDIX A - Glossary</u></b></h2>
+    <p>Your Writings will be here!</p>
+  </div>
+
+  <div class="w3-container" style="margin-left:340px">
+    <h2 style="text-align: center;"><b><u>APPENDIX B - Group Log</u></b></h2>
+    <p>Your Writings will be here!</p>
+  </div>
+
+</body>
+</html>
